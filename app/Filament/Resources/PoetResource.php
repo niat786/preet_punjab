@@ -16,6 +16,9 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
+
 
 
 
@@ -30,21 +33,52 @@ class PoetResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('pen_name')->required(),
-                Forms\Components\TextInput::make('real_name')->required(),
-                Forms\Components\DatePicker::make('date_of_birth')->required(),
-                Section::make()
-                        ->columns([
-                            'sm' => 1,
-                        ])
-                        ->schema([
-                            Forms\Components\RichEditor::make('bio')->required()
-                                ->columnStart([
-                                    'sm' => 1,
-                                ]),
-                            // ...
-                        ])
-            ]);
+
+                Section::make([
+
+                    Grid::make([
+                        'default' => 1,
+                        'sm' => 1,
+                        'md' => 2,
+                        'lg' => 2,
+                        'xl' => 3,
+                        '2xl' => 4,
+                    ])->schema([
+                        Forms\Components\TextInput::make('pen_name')->required(),
+                        Forms\Components\TextInput::make('real_name')->required(),
+                        Forms\Components\DatePicker::make('date_of_birth')->required(),
+                    ]),
+    
+                    Grid::make([
+                        'sm' => 1,
+                        'md' => 2,
+                    ])->schema([
+                        FileUpload::make('cover_image')
+                        ->image()
+                        ->imageEditor()
+                        ->imageEditorAspectRatios([
+                            null,
+                            '16:9',
+                            '4:3',
+                            '1:1',
+                        ]),
+                        FileUpload::make('poet_image')
+                        ->image()
+                        ->imageEditor()
+                        ->imageEditorAspectRatios([
+                            null,
+                            '16:9',
+                            '4:3',
+                            '1:1',
+                        ]),
+                    ]),
+     
+               
+                                Forms\Components\RichEditor::make('bio')->required()
+                            
+
+                ])
+                ]);
     }
 
     public static function table(Table $table): Table

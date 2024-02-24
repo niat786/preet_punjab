@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
 
 
 class CulturalContentResource extends Resource
@@ -49,7 +50,7 @@ class CulturalContentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title'),
             ])
             ->filters([
                 //

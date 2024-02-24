@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cultural_contents', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->text('content');
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->foreign('cultural_content_id')->references('id')->on('cultural_contents')->onDelete('cascade');
+            $table->string('comment');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cultural_contents');
+        Schema::dropIfExists('comments');
     }
 };

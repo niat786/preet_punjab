@@ -21,7 +21,7 @@ class CulturalContentResource extends Resource
 {
     protected static ?string $model = CulturalContent::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
     public static function form(Form $form): Form
     {
@@ -34,6 +34,7 @@ class CulturalContentResource extends Resource
                         ])
                         ->schema([
                             Forms\Components\TextInput::make('title')->required(),
+                            Forms\Components\TextInput::make('slug')->required()->rules(['alpha_dash']),
                             Textarea::make('description')->autosize(),
                             Forms\Components\RichEditor::make('content')->required()
                                 ->columnStart([

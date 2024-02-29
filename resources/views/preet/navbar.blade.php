@@ -9,7 +9,7 @@
           </div>
       </div>
       
-        <h1 class="navHead"><a href="index.html" class="text-decoration-none text-black">Preet//<span style="color: #f27420">Punjab</span></a> </h1>
+        <h1 class="navHead"><a href="index.html" class="text-decoration-none text-black"><img src="{{asset('preet/images/logo.png')}}" alt="" width="50%" /></a> </h1>
         <div
           class="searchSignUp d-flex justify-content-center align-items-center  gap-sm-4 gap-lg-2"
         >  <input type="text" class="rounded searchBar d-none d-lg-block">

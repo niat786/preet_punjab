@@ -29,7 +29,7 @@
             "
           ></div>
           <button class="btn text-white d-none d-md-block" style="background-color: #f27420">
-           <a href="signup.html"> Sign Up</a>
+           <a href="{{url('sign-up')}}"> Sign Up</a>
           </button>
           <div id="navBtn">
             <div></div>

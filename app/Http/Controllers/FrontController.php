@@ -35,4 +35,12 @@ class FrontController extends Controller
     public function contact(){
         return view('preet.contact');
     }
+
+    public function sign_up(){
+        return view('preet.signup');
+    }
+    
+    public function login(){
+        return view('preet.login');
+    }
 }

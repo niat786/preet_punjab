@@ -21,6 +21,9 @@ Route::get('/heritage-sites', [FrontController::class, "heritage_sites"]);
 Route::get('/about', [FrontController::class, "about"]);
 Route::get('/contact', [FrontController::class, "contact"]);
 
+Route::get('/sign-up', [FrontController::class, "sign_up"]);
+Route::get('/login', [FrontController::class, "login"]);
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');

@@ -68,6 +68,8 @@ class CulturalContentResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title'),
+                TextColumn::make('description'),
+                TextColumn::make('updated_at')->label('Updated')->since(),
             ])
             ->filters([
                 //

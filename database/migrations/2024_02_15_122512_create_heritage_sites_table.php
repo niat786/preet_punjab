@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('heritage_sites', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('description');
             $table->string('slug');
             $table->string('featured_image');
             $table->text('content');

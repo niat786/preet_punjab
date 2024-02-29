@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
 
 class HeritageSiteResource extends Resource
 {
@@ -28,11 +30,14 @@ class HeritageSiteResource extends Resource
             ->schema([
                 Section::make()->schema([
                     Forms\Components\TextInput::make('title')->required(),
+                    Forms\Components\TextInput::make('slug')->required()->rules(['alpha_dash']),
+
                     Grid::make([
                         'sm' => 1,
                         'md' => 2,
                     ])->schema([
-                        Forms\Components\TextInput::make('slug')->required()->rules(['alpha_dash']),
+                    Textarea::make('description')->autosize(),
+
                         FileUpload::make('featured_image')
                         ->image()
                         ->imageEditor()
@@ -54,7 +59,9 @@ class HeritageSiteResource extends Resource
     {
         return $table
             ->columns([
-              
+                TextColumn::make('title'),
+                TextColumn::make('description'),
+                TextColumn::make('updated_at')->label('Updated')->since(),
             ])
             ->filters([
                 //

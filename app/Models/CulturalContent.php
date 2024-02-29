@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CulturalContent extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'content'];
+    protected $fillable = ['title', 'description', 'content', 'slug', 'featured_image'];
 
 }

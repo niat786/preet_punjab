@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CommentResource\Pages;
 use App\Filament\Resources\CommentResource\RelationManagers;
 use App\Models\Comment;
+use App\Models\CulturalContent;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -36,12 +37,10 @@ class CommentResource extends Resource
                         'default' => 1,
                     
                     ])->schema([ 
-                            Select::make('post')
-                                ->options([
-                                    'slug1' => 'post 1',
-                                    'slug2' => 'post 2',
-                                    'slug3' => 'post 3',
-                                ])->native(false)->searchable(),
+                            Select::make('cultural_content_id')
+                            ->label('Cultural Content')
+                            ->options(CulturalContent::all()->pluck('title', 'id'))
+                            ->searchable()->native(false)->searchable()->required(),
                         Forms\Components\Textarea::make('comment')->required(),
                     ]),
             

@@ -1,6 +1,5 @@
 @include('preet.header')
   <body class="d-flex poetrybody flex-column min-vh-100">
-    <!-- navbar -->
   @include('preet.navbar')
 
     <!-- main section start-->
@@ -25,11 +24,7 @@
                     class="input-field"
                     placeholder="Search..."
                   />
-                  <a href="./signup.html"
-                    ><button type="submit" class="input-button">
-                      Sign Up
-                    </button></a
-                  >
+              
                 </div>
 
                 <h3 style="margin-top: 30px; margin-bottom: 30px">
@@ -90,141 +85,14 @@
 
               <!-- /////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-              <div class="signup-section">
-                <div class="Potd2">
-                  <div class="hrpoet1">
-                    <hr class="potdhr1" />
-                    <p>Popular Themes</p>
-                  </div>
-                  <div></div>
-                  <div class="potdtext1">
-                    <div class="potdbtn">
-                      <button>#Life</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Sad</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Kids</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Dua</button>
-                    </div>
-                  </div>
-                  <div class="potdtext1">
-                    <div class="potdbtn">
-                      <button>#Sufi</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Friend</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Father</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Mother</button>
-                    </div>
-                  </div>
-                  <div class="potdtext1">
-                    <div class="potdbtn">
-                      <button>#Dua</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Dua</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Father</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Father</button>
-                    </div>
-                  </div>
-                  <div class="potdtext1">
-                    <div class="potdbtn">
-                      <button>#Sufi</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Friends</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Friends</button>
-                    </div>
-                    <div class="potdbtn">
-                      <button>#Mother</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
             </div>
 
             <!-- /////////////////////////////////////////////////////////////////////////// -->
           </div>
         </div>
 
-        <div class="container-fluid">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 footerspace">
-                <div class="footerbar">
-                  <div
-                    class="navbarb d-flex align-items-center justify-content-center"
-                    href=""
-                  >
-                    <span
-                      style="
-                        color: black;
-                        margin-top: -3px;
-                        font-size: 27px;
-                        font-weight: 700;
-                      "
-                      >Preet</span
-                    >
-                    <h1 style="color: black"><strong>//</strong></h1>
-                    <span
-                      style="
-                        color: #f27420;
-                        margin-top: -3px;
-                        font-size: 27px;
-                        font-weight: 700;
-                      "
-                      >Punjab</span
-                    >
-                  </div>
-                  <div
-                    class="col-md-4"
-                    style="display: inline-flex; margin-left: 20px"
-                  >
-                    <div class="footerh1">
-                      <h3>
-                        <strong><a href="waris.html">Poets</a></strong>
-                      </h3>
-                    </div>
-
-                    <div class="footerh1">
-                      <h3>
-                        <strong><a href="poetry.html">Poetry</a></strong>
-                      </h3>
-                    </div>
-                    <div class="footerh3">
-                      <h3>
-                        <strong><a href="">Kalam</a></strong>
-                      </h3>
-                    </div>
-                  </div>
-                  <div class="col-md-4 input-container1 clearfix">
-                    <input type="text" class="input" placeholder="Search..." />
-                    <a href="./signup.html">
-                      <img
-                        src="./images/search-removebg-preview.png"
-                        class="input-button1"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </div>
 

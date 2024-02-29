@@ -7,7 +7,7 @@
       <!-- hero section -->
       <div class="hero bg-image">
         <div class="poetImg d-flex align-items-center gap-2 text-white">
-          <img src="images/poet.png" alt="" />
+          <img src="{{asset($poet->poet_image)}}" alt="" />
           <div class="d-flex flex-column">
             <h2>{{$poet->real_name}}</h2>
             <p>1722 – 1798 | Punjab, Pakistan</p>
@@ -49,7 +49,7 @@
       <div class="p-5 d-flex flex-column flex-md-row align-items-center">
         <div class="rel px-lg-3 w-100 w-lg-50">
           <div class="absPic">
-            <img src="images/tomb waris sahh.jpg" alt="" />
+            <img src="{{asset($poet->cover_image)}}" alt="" />
           </div>
         </div>
         <div class="px-2 px-lg-5 w-100 w-lg-50 my-5">

@@ -195,46 +195,18 @@
      <h2 class="m-3 px-4 px-md-2 px-lg-3">Famous Poet</h2>
    </div>
    <div class="d-flex  gap-4 px-5 flex-wrap poetDiv">
-     
+     @foreach($poets as $poet)
      <div class="d-flex flex-column famousPoet ">
        <div>
-         <img class="poetImg" src="{{asset('preet/images/download__4_-removebg-preview 1.png')}}" alt="">
+         <img class="poetImg" src="{{asset($poet->poet_image)}}" alt="">
        </div>
        <div class="poetDesc d-flex justify-content-between px-3  align-items-center">
-         <div><p><h5>Waris Shah</h5> 1722-1798</p></div>
-         <div class="linkBox "><img src="{{asset('preet/images/Vector (2).png')}}" alt=""></div>
+         <div><p><h5>{{ $poet->real_name}}</h5> 1722-1798</p></div>
+         <div class="linkBox "><img src="{{asset($poet->poet_image)}}" alt=""></div>
        </div>
      </div>
+     @endforeach
 
-     <div class="d-flex flex-column famousPoet">
-       <div>
-         <img class="poetImg" src="{{asset('preet/images/download__4_-removebg-preview 1.png')}}" alt="">
-       </div>
-       <div class="poetDesc d-flex justify-content-between px-3  align-items-center">
-         <div><p><h5>Waris Shah</h5> 1722-1798</p></div>
-         <div class="linkBox "><img src="{{asset('preet/images/Vector (2).png')}}" alt=""></div>
-       </div>
-     </div>
-
-     <div class="d-flex flex-column famousPoet">
-       <div>
-         <img class="poetImg" src="{{asset('preet/images/download__4_-removebg-preview 1.png')}}" alt="">
-       </div>
-       <div class="poetDesc d-flex justify-content-between px-3  align-items-center">
-         <div><p><h5>Waris Shah</h5> 1722-1798</p></div>
-         <div class="linkBox "><img src="{{asset('preet/images/Vector (2).png')}}" alt=""></div>
-       </div>
-     </div>
-
-     <div class="d-flex flex-column famousPoet">
-       <div>
-         <img class="poetImg" src="{{asset('preet/images/download__4_-removebg-preview 1.png')}}" alt="">
-       </div>
-       <div class="poetDesc d-flex justify-content-between px-3  align-items-center">
-         <div><p><h5>Waris Shah</h5> 1722-1798</p></div>
-         <div class="linkBox "><img src="{{asset('preet/images/Vector (2).png')}}" alt=""></div>
-       </div>
-     </div>
    </div>
  
 

@@ -1,6 +1,8 @@
 <div class="footerBtm">
   <div>
-    <a href="index.html">Preet Punjab.com</a>
+    <a href="/">
+      <img src="{{asset('preet/images/logo.png')}}" width="40%" />
+    </a>
   </div>
 
   <div class="ftrAbout">

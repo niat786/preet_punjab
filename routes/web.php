@@ -14,7 +14,7 @@ use App\Http\Controllers\FrontController;
 */
 
 Route::get('/',  [FrontController::class, "front_page"]);
-Route::get('/poet', [FrontController::class, "poet"]);
+// Route::get('/poet', [FrontController::class, "poet"]);
 Route::get('/poet/{slug}', [FrontController::class, 'showPoet'])->name('poet.show');;
 Route::get('/poetry', [FrontController::class, "poetry"]);
 Route::get('/punjabi-culture', [FrontController::class, "punjabi_culture"]);

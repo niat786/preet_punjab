@@ -10,7 +10,8 @@ use App\Models\Poet;
 class FrontController extends Controller
 {
     public function front_page(){
-        return view('preet.index');
+        $poets = Poet::take(4)->get();
+        return view('preet.index', ['poets'=>$poets]);
     }
 
     public function poet(){

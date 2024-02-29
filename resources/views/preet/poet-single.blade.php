@@ -3,7 +3,7 @@
     <!-- navbar -->
   @include('preet.navbar')
 
-    <div class="cont firstSec my-5">
+    <div class="cont firstSec my-5" style="margin-top:100px;">
       <!-- hero section -->
       <div class="hero bg-image">
         <div class="poetImg d-flex align-items-center gap-2 text-white">

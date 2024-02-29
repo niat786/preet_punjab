@@ -3,7 +3,7 @@
     <!-- navbar -->
   @include('preet.navbar')
 
-    <div class="firstSec cont">
+    <div class="firstSec cont"  style="margin-top:100px;">
       <div class="px-4 mx-3 px-md-5 mx-md-5">
         <h1>guzre jo apne yaron ki sohbat mein chaar din</h1>
       </div>

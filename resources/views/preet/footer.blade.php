@@ -13,6 +13,7 @@
     <div>Privacy Policy</div>
   </div>
 </div>
+  
     <script src="{{asset('preet/js/script.js')}}"></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 

@@ -3,7 +3,7 @@
     <!-- navbar -->
   @include('preet.navbar')
 
-    <div class="count firstSec my-5">
+    <div class="count firstSec my-5" style="margin-top:100px;">
       <!-- hero sectio -->
       <div
         class="d-flex m-4 m-lg-3 flex-column flex-lg-row align-items-center justify-content-center p-3 p-lg-2 p-lg-5 gap-5 left"

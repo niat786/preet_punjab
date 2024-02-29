@@ -3,7 +3,7 @@
     <!-- navbar -->
   @include('preet.navbar')
 
-    <div class="firstSec cont">
+    <div class="firstSec cont"  style="margin-top:100px;">
       <!-- main section start-->
       <div class="container-fluid">
         <div class="container main-login-section">

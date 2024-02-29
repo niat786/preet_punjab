@@ -3,7 +3,7 @@
     <!-- navbar -->
   @include('preet.navbar')
 
-    <div class="firstSec cont">
+    <div class="firstSec cont" style="margin-top: 100px;">
 
          <!-- main section start-->
   <div class="container-fluid">
@@ -39,12 +39,12 @@
                 </label>
               </div>
               <div class="submitbtn">
-                <button type="submit" class="conbtn">Sign Up</button>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
               </div>
             </form>
           </div>
           <div class="signup-section1">
-            <p>Already have an account? <a href="login.html">login</a> </p>
+            <p>Already have an account? <a href="/login">login</a> </p>
           </div>
         </div>
       </div>

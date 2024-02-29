@@ -3,7 +3,7 @@
     <!-- navbar -->
   @include('preet.navbar')
 
-    <div class="firstSec my-5">
+    <div class="firstSec my-5" style="margin-top:100px;">
       <!-- slider -->
 
       <div

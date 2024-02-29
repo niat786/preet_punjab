@@ -198,11 +198,11 @@
      @foreach($poets as $poet)
      <div class="d-flex flex-column famousPoet ">
        <div>
-         <img class="poetImg" src="{{asset($poet->poet_image)}}" alt="">
+         <a href="{{ route('poet.show', ['slug' => $poet->slug]) }}"><img class="poetImg" src="{{asset('storage/'.$poet->poet_image)}}" alt=""></a>
        </div>
        <div class="poetDesc d-flex justify-content-between px-3  align-items-center">
          <div><p><h5>{{ $poet->real_name}}</h5> 1722-1798</p></div>
-         <div class="linkBox "><img src="{{asset($poet->poet_image)}}" alt=""></div>
+         <!-- <div class="linkBox "><img src="{{asset('storage/'.$poet->poet_image)}}" alt=""></div> -->
        </div>
      </div>
      @endforeach

@@ -3,8 +3,8 @@
   @include('preet.navbar')
 
     <!-- main section start-->
-    <div class="cont firstSec my-5">
-      <div class="container-fluid">
+    <div class="cont firstSec my-5"  >
+      <div class="container-fluid" style="margin-top:100px">
         <div class="container main-poetry-section">
           <div class="row">
             <div class="col-lg-7 p-0">
@@ -69,7 +69,7 @@
                 @foreach ($poets as $poet)
                 <div class="potdtext1">
                   <div class="potdimg">
-                    <img src="{{ asset($poet->poet_image) }}" alt="" />
+                    <img src="{{ asset('storage/'.$poet->poet_image) }}" width="200px" alt="" />
                   </div>
                   <div class="sidebartext">
                     <p class="sidebartextp"><strong><a href="{{ route('poet.show', ['slug' => $poet->slug]) }}">{{$poet->real_name}}</a></strong></p>

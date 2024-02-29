@@ -12,6 +12,11 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
+use App\Models\User;
+
 
 class PoetryResource extends Resource
 {
@@ -23,7 +28,14 @@ class PoetryResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Section::make()->schema([
+                    Forms\Components\TextInput::make('Title')->required(),
+                    Select::make('poet_id')
+                        ->label('Poet')
+                        ->options(User::all()->pluck('name', 'id'))
+                        ->searchable(),
+                    Forms\Components\RichEditor::make('Poetry')->required()
+                ])
             ]);
     }
 

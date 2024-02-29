@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\FileUpload;
 
 
 class CulturalContentResource extends Resource
@@ -34,7 +36,21 @@ class CulturalContentResource extends Resource
                         ])
                         ->schema([
                             Forms\Components\TextInput::make('title')->required(),
-                            Forms\Components\TextInput::make('slug')->required()->rules(['alpha_dash']),
+                            Grid::make([
+                                'sm'=>1,
+                                'md'=>2
+                            ])->schema([
+                                Forms\Components\TextInput::make('slug')->required()->rules(['alpha_dash']),
+                                FileUpload::make('featured_image')
+                                            ->image()
+                                            ->imageEditor()
+                                            ->imageEditorAspectRatios([
+                                                null,
+                                                '16:9',
+                                                '4:3',
+                                                '1:1',
+                                            ])->required(),
+                            ]),
                             Textarea::make('description')->autosize(),
                             Forms\Components\RichEditor::make('content')->required()
                                 ->columnStart([

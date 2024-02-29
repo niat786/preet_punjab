@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'preet.index');
+Route::view('/about', 'preet.about');
+Route::view('/poet', 'preet.poet-single');
+Route::view('/poetry', 'preet.poetry');
+Route::view('/punjabi-culture', 'preet.punjabiculture');
+Route::view('/heritage-sites', 'preet.punjabheritage');
+
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
+
+require __DIR__.'/auth.php';

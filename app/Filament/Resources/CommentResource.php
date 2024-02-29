@@ -12,6 +12,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
+
+
 
 class CommentResource extends Resource
 {
@@ -23,7 +30,22 @@ class CommentResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Section::make([
+
+                    Grid::make([
+                        'default' => 1,
+                    
+                    ])->schema([ 
+                            Select::make('post')
+                                ->options([
+                                    'slug1' => 'post 1',
+                                    'slug2' => 'post 2',
+                                    'slug3' => 'post 3',
+                                ])->native(false)->searchable(),
+                        Forms\Components\Textarea::make('comment')->required(),
+                    ]),
+            
+                ]),
             ]);
     }
 
@@ -31,7 +53,8 @@ class CommentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('comment'),
+                TextColumn::make('post'),
             ])
             ->filters([
                 //

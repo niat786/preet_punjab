@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('poetries', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->foreignId('poet_id')->references('id')->on('poets');
+            $table->text('poetry');
             $table->timestamps();
         });
     }

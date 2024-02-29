@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Poet extends Model
 {
     use HasFactory;
-    protected $fillable = ['pen_name', 'real_name', 'date_of_birth', 'bio'];
+    protected $fillable = ['pen_name', 'real_name', 'date_of_birth', 'bio','google_map','death_date', 'birth_place'];
 }

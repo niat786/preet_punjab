@@ -12,6 +12,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
 
 class HeritageSiteResource extends Resource
 {
@@ -23,7 +26,27 @@ class HeritageSiteResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Section::make()->schema([
+                    Forms\Components\TextInput::make('title')->required(),
+                    Grid::make([
+                        'sm' => 1,
+                        'md' => 2,
+                    ])->schema([
+                        Forms\Components\TextInput::make('slug')->required()->rules(['alpha_dash']),
+                        FileUpload::make('featured_image')
+                        ->image()
+                        ->imageEditor()
+                        ->imageEditorAspectRatios([
+                            null,
+                            '16:9',
+                            '4:3',
+                            '1:1',
+                        ])->required(),
+                    ]),
+                   
+                    Forms\Components\RichEditor::make('content')->required(),
+
+                ])
             ]);
     }
 
@@ -31,7 +54,7 @@ class HeritageSiteResource extends Resource
     {
         return $table
             ->columns([
-                //
+              
             ])
             ->filters([
                 //

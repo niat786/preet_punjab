@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('pen_name');
             $table->string('real_name');
+            $table->string('cover_image');
+            $table->string('poet_image');
             $table->date('date_of_birth');
+            $table->date('death_date');
+            $table->date('birth_place');
+            $table->string('google_map');
             $table->text('bio');
             $table->timestamps();
         });

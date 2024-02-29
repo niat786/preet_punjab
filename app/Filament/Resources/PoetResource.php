@@ -21,8 +21,6 @@ use Filament\Forms\Components\Grid;
 
 
 
-
-
 class PoetResource extends Resource
 {
     protected static ?string $model = Poet::class;
@@ -46,7 +44,10 @@ class PoetResource extends Resource
                     ])->schema([
                         Forms\Components\TextInput::make('pen_name')->required(),
                         Forms\Components\TextInput::make('real_name')->required(),
+                        Forms\Components\TextInput::make('birth_place')->required(),
+                        Forms\Components\TextInput::make('google_map')->required(),
                         Forms\Components\DatePicker::make('date_of_birth')->required(),
+                        Forms\Components\DatePicker::make('death_date')->required(),
                     ]),
     
                     Grid::make([
@@ -72,11 +73,7 @@ class PoetResource extends Resource
                             '1:1',
                         ]),
                     ]),
-     
-               
-                                Forms\Components\RichEditor::make('bio')->required()
-                            
-
+                    Forms\Components\RichEditor::make('bio')->required()
                 ])
                 ]);
     }

@@ -29,12 +29,12 @@ class PoetryResource extends Resource
         return $form
             ->schema([
                 Section::make()->schema([
-                    Forms\Components\TextInput::make('Title')->required(),
+                    Forms\Components\TextInput::make('title')->required(),
                     Select::make('poet_id')
                         ->label('Poet')
                         ->options(User::all()->pluck('name', 'id'))
                         ->searchable(),
-                    Forms\Components\RichEditor::make('Poetry')->required()
+                    Forms\Components\RichEditor::make('poetry')->required()
                 ])
             ]);
     }

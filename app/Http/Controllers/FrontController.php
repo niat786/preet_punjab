@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Poetry;
+use App\Models\Poet;
+
 
 class FrontController extends Controller
 {
@@ -14,9 +17,21 @@ class FrontController extends Controller
         return view('preet.poet-single');
     }
 
-    public function poetry(){
-        return view('preet.poetry');
+    public function poetry(Request $request){
+        $poetries = Poetry::paginate(10);
+        $poets = Poet::take(10)->get();
+        return view('preet.poetry', ['poetries'=>$poetries, 'poets'=>$poets]);
     }
+
+    public function showPoet($slug)
+    {
+        // Fetch the poet based on the slug
+        $poet = Poet::where('slug', $slug)->firstOrFail();
+
+        // Pass the poet data to the view
+        return view('preet.poet-single', compact('poet'));
+    }
+
 
     public function punjabi_culture(){
         return view( 'preet.punjabiculture');

@@ -45,6 +45,7 @@ class PoetResource extends Resource
                     ])->schema([
                         Forms\Components\TextInput::make('pen_name')->required(),
                         Forms\Components\TextInput::make('real_name')->required(),
+                        Forms\Components\TextInput::make('slug')->required(),
                         Forms\Components\TextInput::make('birth_place')->required(),
                         Forms\Components\TextInput::make('google_map')->required(),
                         Forms\Components\DatePicker::make('date_of_birth')->required(),

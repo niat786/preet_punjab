@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('pen_name');
             $table->string('real_name');
+            $table->string('slug')->unique();
             $table->string('cover_image');
             $table->string('poet_image');
             $table->date('date_of_birth');

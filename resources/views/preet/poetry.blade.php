@@ -35,140 +35,32 @@
                 <h3 style="margin-top: 30px; margin-bottom: 30px">
                   <strong>Today</strong>
                 </h3>
-                <div class="Potd">
-                  <div class="hrpoet">
-                    <hr class="potdhr" />
-                    <p>Poetry of the day</p>
-                  </div>
-                  <div class="potdtext">
-                    <h3><strong>Na Kar Bandya Meri Meri</strong></h3>
-                    <h6>
-                      Na Kar Bandya Meri Mer <br />
-                      Na Teri Na Meri <br />
-                      Char Dina Da Mela <br />
-                      Dunya Pher Matti De Dheri <br />
-                      by Bulleh Shah <br />
-                      ---
-                    </h6>
-                  </div>
-                  <hr class="potdfooterhr" />
-                  <div class="potdfooter">
-                    <div>
-                      <h6>By Bulleh Shah</h6>
+                @if($poetries)
+                  @foreach ($poetries as $poetry)
+                  <div class="Potd">
+                    
+                    <div class="potdtext">
+                      <h3><strong>{{$poetry->title}}</strong></h3>
+                      <h6>
+                        {{$poetry->poetry}}
+                        ---
+                      </h6>
                     </div>
-                    <div class="h6a">
-                      <h6><a href="">Read poetry ></a></h6>
+                    <hr class="potdfooterhr" />
+                    <div class="potdfooter">
+                      <div>
+                        <h6>By {{$poetry->poet->name}}</h6>
+                      </div>
+                      <div class="h6a">
+                        <h6><a href="">Read poetry ></a></h6>
+                      </div>
                     </div>
                   </div>
-                </div>
+                  @endforeach
+                  {{$poetries->links()}}
+                @endif
                 <!-- //////////////////////////////////////////// -->
-                <div class="Potd">
-                  <div class="hrpoet">
-                    <hr class="potdhr" />
-                    <p>Poetry of the day</p>
-                  </div>
-                  <div class="potdtext">
-                    <h3><strong>Na Kar Bandya Meri Meri</strong></h3>
-                    <h6>
-                      Na Kar Bandya Meri Mer <br />
-                      Na Teri Na Meri <br />
-                      Char Dina Da Mela <br />
-                      Dunya Pher Matti De Dheri <br />
-                      by Bulleh Shah <br />
-                      ---
-                    </h6>
-                  </div>
-                  <hr class="potdfooterhr" />
-                  <div class="potdfooter">
-                    <div>
-                      <h6>By Bulleh Shah</h6>
-                    </div>
-                    <div class="h6a">
-                      <h6><a href="">Read poetry ></a></h6>
-                    </div>
-                  </div>
-                </div>
-                <!-- /////////////////////////////////////////////////////////// -->
-                <div class="Potd">
-                  <div class="hrpoet">
-                    <hr class="potdhr" />
-                    <p>Poetry of the day</p>
-                  </div>
-                  <div class="potdtext">
-                    <h3><strong>Na Kar Bandya Meri Meri</strong></h3>
-                    <h6>
-                      Na Kar Bandya Meri Mer <br />
-                      Na Teri Na Meri <br />
-                      Char Dina Da Mela <br />
-                      Dunya Pher Matti De Dheri <br />
-                      by Bulleh Shah <br />
-                      ---
-                    </h6>
-                  </div>
-                  <hr class="potdfooterhr" />
-                  <div class="potdfooter">
-                    <div>
-                      <h6>By Bulleh Shah</h6>
-                    </div>
-                    <div class="h6a">
-                      <h6><a href="">Read poetry ></a></h6>
-                    </div>
-                  </div>
-                </div>
-                <!-- ///////////////////////////////////////////////////////////// -->
-                <div class="Potd">
-                  <div class="hrpoet">
-                    <hr class="potdhr" />
-                    <p>Poetry of the day</p>
-                  </div>
-                  <div class="potdtext">
-                    <h3><strong>Na Kar Bandya Meri Meri</strong></h3>
-                    <h6>
-                      Na Kar Bandya Meri Mer <br />
-                      Na Teri Na Meri <br />
-                      Char Dina Da Mela <br />
-                      Dunya Pher Matti De Dheri <br />
-                      by Bulleh Shah <br />
-                      ---
-                    </h6>
-                  </div>
-                  <hr class="potdfooterhr" />
-                  <div class="potdfooter">
-                    <div>
-                      <h6>By Bulleh Shah</h6>
-                    </div>
-                    <div class="h6a">
-                      <h6><a href="">Read poetry ></a></h6>
-                    </div>
-                  </div>
-                </div>
-                <!-- /////////////////////////////////////////////////////////////////// -->
-                <div class="Potd">
-                  <div class="hrpoet">
-                    <hr class="potdhr" />
-                    <p>Poetry of the day</p>
-                  </div>
-                  <div class="potdtext">
-                    <h3><strong>Na Kar Bandya Meri Meri</strong></h3>
-                    <h6>
-                      Na Kar Bandya Meri Mer <br />
-                      Na Teri Na Meri <br />
-                      Char Dina Da Mela <br />
-                      Dunya Pher Matti De Dheri <br />
-                      by Bulleh Shah <br />
-                      ---
-                    </h6>
-                  </div>
-                  <hr class="potdfooterhr" />
-                  <div class="potdfooter">
-                    <div>
-                      <h6>By Bulleh Shah</h6>
-                    </div>
-                    <div class="h6a">
-                      <h6><a href="">Read poetry ></a></h6>
-                    </div>
-                  </div>
-                </div>
+       
               </div>
             </div>
 
@@ -179,91 +71,20 @@
                   <p>Best Poets</p>
                 </div>
                 <div></div>
+                @foreach ($poets as $poet)
                 <div class="potdtext1">
                   <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
+                    <img src="{{ asset($poet->poet_image) }}" alt="" />
                   </div>
                   <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
+                    <p class="sidebartextp"><strong><a href="{{ route('poet.show', ['slug' => $poet->slug]) }}">{{$poet->real_name}}</a></strong></p>
+                    <p class="sidebartextp1">{{ \Carbon\Carbon::parse($poet->date_of_birth)->format('Y') }} -
+                <!-- Extracting the year of death -->
+                {{ \Carbon\Carbon::parse($poet->date_of_death)->format('Y') }}</p>
                   </div>
                 </div>
                 <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="potdtext1">
-                  <div class="potdimg">
-                    <img src="./images/bulleh_shah.jpg" alt="" />
-                  </div>
-                  <div class="sidebartext">
-                    <p class="sidebartextp"><strong>Bulleh Shah</strong></p>
-                    <p class="sidebartextp1">1680-1757</p>
-                  </div>
-                </div>
-                <hr class="potdfooterhr1" />
-                <div class="submitbtn">
-                  <a href=""
-                    ><button type="submit" class="conbtn">All Posts</button></a
-                  >
-                </div>
+                @endforeach
               </div>
               <div class="poetry-section"></div>
 

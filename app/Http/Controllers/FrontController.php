@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Poetry;
 use App\Models\Poet;
 use App\Models\CulturalContent;
+use App\Models\HeritageSite;
 
 
 class FrontController extends Controller
@@ -38,13 +39,22 @@ class FrontController extends Controller
 
 
     public function punjabi_culture(){
-        return view( 'preet.punjabiculture');
+        $pc = CulturalContent::take(5)->get();
+        return view( 'preet.punjabiculture', ['pc'=>$pc]);
     }
 
+    public function punjabi_culture_view($slug){
+        $pc = CulturalContent::where('slug', $slug)->firstOrFail();
+        return view( 'preet.punjabi_sub', ['pc'=>$pc]);
+    }
     public function heritage_sites(){
-        return view( 'preet.punjabheritage');
+        $hr = HeritageSite::take(5)->get();
+        return view( 'preet.punjabheritage', ['hr'=>$hr]);
     }
-
+    public function heritage_sites_view($slug){
+        $hr = HeritageSite::where('slug', $slug)->firstOrFail();
+        return view( 'preet.heritage_sub', ['hr'=>$hr]);
+    }
 
     public function about(){
         return view('preet.about');

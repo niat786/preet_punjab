@@ -18,7 +18,9 @@ Route::get('/',  [FrontController::class, "front_page"]);
 Route::get('/poet/{slug}', [FrontController::class, 'showPoet'])->name('poet.show');;
 Route::get('/poetry', [FrontController::class, "poetry"]);
 Route::get('/punjabi-culture', [FrontController::class, "punjabi_culture"]);
+Route::get('/punjabi-culture/{slug}', [FrontController::class, "punjabi_culture_view"])->name('pc.show');
 Route::get('/heritage-sites', [FrontController::class, "heritage_sites"]);
+Route::get('/heritage-sites/{slug}', [FrontController::class, "heritage_sites_view"])->name('hr.show');
 Route::get('/about', [FrontController::class, "about"]);
 Route::get('/contact', [FrontController::class, "contact"]);
 

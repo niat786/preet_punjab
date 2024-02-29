@@ -50,14 +50,7 @@
               </div>
 
               <div class="d-flex justify-content-center">
-                <a href="./punjabi_sub.html">
-                  <button
-                    class="btn text-white"
-                    style="background-color: #f27420"
-                  >
-                    View More
-                  </button>
-                </a>
+                
               </div>
             </div>
           </div>
@@ -85,14 +78,7 @@
               </div>
 
               <div class="d-flex justify-content-center">
-                <a href="./punjabi_sub.html">
-                  <button
-                    class="btn text-white"
-                    style="background-color: #f27420"
-                  >
-                    View More
-                  </button>
-                </a>
+         
               </div>
             </div>
           </div>
@@ -116,23 +102,22 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
+    @php $counter = 1 @endphp
       <div class="cont">
+        @foreach($pc as $p)
+         @if($counter % 2 != 0)
         <!-- food section -->
         <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
           <div
             class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 foodSec"
           >
             <div class="txt">
-              <h2>Foods</h2>
+              <h2>{{$p->title}}</h2>
               <p>
-                Makke di Roti (maize bread) and Sarson da Saag (mustard leaf
-                curry) is another traditional dish of Punjab. There are many
-                other foods like Chole Bhathure, Rajma Chawal and Paneer Naan,
-                but one of the humongous favourites is Tandoori Chicken!
+                {{$p->description}}
               </p>
               <div class="d-flex justify-content-start">
-                <a href="./punjabi_sub.html">
+                <a href="{{ route('pc.show', ['slug' => $p->slug]) }}">
                   <button
                     class="btn text-white"
                     style="background-color: #f27420"
@@ -148,14 +133,14 @@
               <div class="relDiv">
                 <img
                   class="absDiv"
-                  src="{{asset('preet/images/Makki-di-Roti-and-Sarson-ka-Saag 1.png')}}"
+                  src="{{asset('storage/'.$p->featured_image)}}"
                   alt=""
                 />
               </div>
             </div>
           </div>
         </div>
-
+      @else
         <!-- dress section -->
         <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
           <div
@@ -167,22 +152,19 @@
               <div class="relDiv">
                 <img
                   class="absDiv"
-                  src="{{asset('preet/images/220px.png')}}"
+                  src="{{asset('storage/'.$p->featured_image)}}"
                   alt=""
                 />
               </div>
             </div>
 
             <div class="txt">
-              <h2>Dresses</h2>
+              <h2>{{$p->title}}</h2>
               <p>
-                The costumes are a mix of colours, comfort and beauty and Punjab
-                is well known for the use of phulkari(embroidery) in its
-                costumes. In most of the villages of Punjab men wear
-                Pagri(turban), dhoti/lacha, kurta, khusa.
+                {{$p->description}}
               </p>
               <div class="d-flex justify-content-start">
-                <a href="./punjabi_sub.html">
+                <a href="{{ route('pc.show', ['slug' => $p->slug]) }}">
                   <button
                     class="btn text-white"
                     style="background-color: #f27420"
@@ -194,80 +176,9 @@
             </div>
           </div>
         </div>
-        <!-- art section -->
-        <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-          <div
-            class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 artSec"
-          >
-            <div class="txt">
-              <h2>Art</h2>
-              <p>
-                Makke di Roti (maize bread) and Sarson da Saag (mustard leaf
-                curry) is another traditional dish of Punjab. There are many
-                other foods like Chole Bhathure, Rajma Chawal and Paneer Naan,
-                but one of the humongous favourites is Tandoori Chicken!
-              </p>
-
-              <div class="d-flex justify-content-start">
-                <a href="./punjabi_sub.html">
-                  <button
-                    class="btn text-white"
-                    style="background-color: #f27420"
-                  >
-                    View More
-                  </button>
-                </a>
-              </div>
-            </div>
-            <div
-              class="img d-flex justify-content-center justify-content-lg-end py-5"
-            >
-              <div class="relDiv">
-                <img class="absDiv" src="{{asset('preet/images/images (14) 1.png')}}" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dance Section -->
-
-        <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-          <div
-            class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 danceSec"
-          >
-            <div
-              class="img d-flex justify-content-center justify-content-lg-between py-5"
-            >
-              <div class="relDiv">
-                <img
-                  class="absDiv"
-                  src="{{asset('preet/images/group-modern-bhangra-dancers-fun-600w-2282785947 1.png')}}"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="txt">
-              <h2>Dances</h2>
-              <p>
-                The costumes are a mix of colours, comfort and beauty and Punjab
-                is well known for the use of phulkari(embroidery) in its
-                costumes. In most of the villages of Punjab men wear
-                Pagri(turban), dhoti/lacha, kurta, khusa.
-              </p>
-              <div class="d-flex justify-content-start">
-                <a href="./punjabi_sub.html">
-                  <button
-                    class="btn text-white"
-                    style="background-color: #f27420"
-                  >
-                    View More
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+           @endif
+           @php $counter++ @endphp
+        @endforeach
       </div>
     </div>
 

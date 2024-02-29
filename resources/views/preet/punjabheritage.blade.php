@@ -116,23 +116,24 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
+@php $counter = 1 @endphp
       <div class="cont">
+
         <div>
+            @foreach($hr as $p)
+         @if($counter % 2 != 0)
           <!-- faisal mosque section -->
           <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
             <div
               class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 faisalSec"
             >
               <div class="txt">
-                <h2>Faisal Mosque</h2>
+                <h2>{{$p->title}}</h2>
                 <p>
-                  The Faisal Mosque in Islamabad, Pakistan, is renowned for its
-                  modern design, inspired by a Bedouin tent, with four towering
-                  minarets and a vast prayer hall.
+                  {{$p->description}}
                 </p>
                 <div class="d-flex justify-content-start">
-                  <a href="./heritage_sub.html" id="faisal">
+                  <a href="{{ route('hr.show', ['slug' => $p->slug]) }}" id="faisal">
                     <button
                       class="btn text-white"
                       style="background-color: #f27420"
@@ -146,11 +147,11 @@
               <div
                 class="img d-flex justify-content-center justify-content-lg-end py-5"
               >
-                <img class="w-100 shadowImg" src="{{asset('preet/images/faisal.jpg')}}" alt="" />
+                <img class="w-100 shadowImg" src="{{asset('storage/'.$p->featured_image)}}" alt="" />
               </div>
             </div>
           </div>
-
+@else
           <!-- minare pakistan -->
           <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
             <div
@@ -159,19 +160,16 @@
               <div
                 class="img d-flex justify-content-center justify-content-lg-end py-5"
               >
-                <img class="w-100 shadowImg" src="{{asset('preet/images/minar.jpg')}}" alt="" />
+                <img class="w-100 shadowImg" src="{{asset('storage/'.$p->featured_image)}}" alt="" />
               </div>
 
               <div class="txt">
-                <h2>Minar-e-Pakistan</h2>
+                <h2> {{$p->title}}</h2>
                 <p>
-                  The Minar-e-Pakistan in Lahore symbolizes Pakistan's
-                  independence, commemorating the Lahore Resolution of 1940.
-                  Standing over 70 meters tall, it is a significant landmark and
-                  a reminder of the nation's history.
+                   {{$p->description}}
                 </p>
                 <div class="d-flex justify-content-start">
-                  <a href="./heritage_sub.html">
+                  <a href="{{ route('hr.show', ['slug' => $p->slug]) }}">
                     <button
                       class="btn text-white"
                       style="background-color: #f27420"
@@ -184,154 +182,12 @@
             </div>
           </div>
 
-          <!-- badshahi section -->
-
-          <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-            <div
-              class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 badshahSec"
-            >
-              <div class="txt">
-                <h2 class="org">Badshahi Mosque</h2>
-                <p>
-                  The Badshahi Mosque in Lahore, Pakistan, is a masterpiece of
-                  Mughal architecture, known for its grandeur and historical
-                  significance.
-                </p>
-                <div class="d-flex justify-content-start">
-                  <a href="./heritage_sub.html">
-                    <button
-                      class="btn text-white"
-                      style="background-color: #f27420"
-                    >
-                      View More
-                    </button>
-                  </a>
-                </div>
-              </div>
-
-              <div
-                class="img d-flex justify-content-center justify-content-lg-end py-5"
-              >
-                <img class="w-100 shadowImg" src="{{asset('preet/images/badshah.webp')}}" alt="" />
-              </div>
-            </div>
-          </div>
+      @endif
+           @php $counter++ @endphp
+        @endforeach
         </div>
 
-        <div>
-          <!-- Gandhara civilization -->
-          <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-            <div
-              class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 minarSec"
-            >
-              <div
-                class="img d-flex justify-content-center justify-content-lg-end py-5"
-              >
-                <img
-                  class="w-100 shadowImg"
-                  src="{{asset('preet/images/Gandhara-School-of-Art.jpg')}}"
-                  alt=""
-                />
-              </div>
-
-              <div class="txt">
-                <h2 class="org">Gandhara civilization</h2>
-                <p>
-                  The Gandhara civilization, flourishing in present-day Pakistan
-                  and Afghanistan from the 6th century BCE to the 5th century
-                  CE, was renowned for its exquisite Buddhist art and sculpture,
-                  blending Hellenistic and Indian influences. This ancient
-                  civilization played a pivotal role in the transmission of
-                  Buddhist culture across Central Asia, leaving a lasting legacy
-                  in art and philosophy.
-                </p>
-                <div class="d-flex justify-content-start">
-                  <a href="./heritage_sub.html">
-                    <button
-                      class="btn text-white"
-                      style="background-color: #f27420"
-                    >
-                      View More
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- kartas section -->
-          <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-            <div
-              class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 faisalSec"
-            >
-              <div class="txt">
-                <h2 class="org">Katas Raj Mandir</h2>
-                <p>
-                  Katas Raj Mandir, a historic Hindu temple complex in Pakistan,
-                  is renowned for its sacred pools and intricate stone carvings,
-                  dating back over a millennium. This architectural marvel,
-                  nestled amidst the serene Chakwal district, holds deep
-                  cultural and religious significance, attracting visitors with
-                  its timeless beauty and spiritual ambiance.
-                </p>
-                <div class="d-flex justify-content-start">
-                  <a href="./heritage_sub.html" id="faisal">
-                    <button
-                      class="btn text-white"
-                      style="background-color: #f27420"
-                    >
-                      View More
-                    </button>
-                  </a>
-                </div>
-              </div>
-
-              <div
-                class="img d-flex justify-content-center justify-content-lg-end py-5"
-              >
-                <img class="w-100 shadowImg" src="{{asset('preet/images/kartas.jpg')}}" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Nankana sahib -->
-          <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-            <div
-              class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 minarSec"
-            >
-              <div
-                class="img d-flex justify-content-center justify-content-lg-end py-5"
-              >
-                <img
-                  class="w-100 shadowImg"
-                  src="{{asset('preet/images/Nankana-Sahib.jpg')}}"
-                  alt=""
-                 style="height:60%;"
-                />
-              </div>
-
-              <div class="txt">
-                <h2 class="org">Nankana Sahib</h2>
-                <p>
-                  Nankana Sahib, located in Punjab, Pakistan, is the birthplace
-                  of Guru Nanak Dev Ji, the founder of Sikhism, making it a
-                  revered pilgrimage site for Sikhs worldwide. The city is home
-                  to the Gurdwara Janam Asthan, a prominent Sikh gurdwara built
-                  at the site of Guru Nanak's birth.
-                </p>
-                <div class="d-flex justify-content-start">
-                  <a href="./heritage_sub.html">
-                    <button
-                      class="btn text-white"
-                      style="background-color: #f27420"
-                    >
-                      View More
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+     
         </div>
       </div>
     </div>

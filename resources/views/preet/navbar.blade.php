@@ -28,9 +28,7 @@
               background-color: rgba(0, 0, 0, 0.452);
             "
           ></div>
-          <button class="btn text-white d-none d-md-block" style="background-color: #f27420">
-           <a href="{{url('sign-up')}}"> Sign Up</a>
-          </button>
+       
           <div id="navBtn">
             <div></div>
             <div></div>

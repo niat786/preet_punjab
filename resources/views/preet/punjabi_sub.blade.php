@@ -30,7 +30,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="images/food.jpg"
+              src="{{asset('storage/'.$pc->featured_image)}}"
               class="d-block w-100"
               alt="..."
               style="object-fit: cover; height: 60vh"
@@ -41,7 +41,7 @@
               ;
             >
               <h1 class="slider_head">
-                <span style="color: #f27420">Foods</span>
+                <span style="color: #f27420">{{$pc->title}}</span>
               </h1>
 
               <div class="d-flex justify-content-center d-none d-md-flex">
@@ -101,10 +101,7 @@
             <div class="txt">
               <h2>Makki Di Roti</h2>
               <p>
-                Makke di Roti (maize bread) and Sarson da Saag (mustard leaf
-                curry) is another traditional dish of Punjab. There are many
-                other foods like Chole Bhathure, Rajma Chawal and Paneer Naan,
-                but one of the humongous favourites is Tandoori Chicken!
+                {!! $pc->content !!}
               </p>
             </div>
             <div
@@ -121,91 +118,6 @@
           </div>
         </div>
 
-        <!-- dress section -->
-        <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-          <div
-            class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 dressSec"
-          >
-            <div
-              class="img d-flex justify-content-center justify-content-lg-between py-5"
-            >
-              <div class="relDiv">
-                <img
-                  class="absDiv"
-                  src="images/Makki-di-Roti-and-Sarson-ka-Saag 1.png"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="txt">
-              <h2>Makki Di Roti</h2>
-              <p>
-                Makke di Roti (maize bread) and Sarson da Saag (mustard leaf
-                curry) is another traditional dish of Punjab. There are many
-                other foods like Chole Bhathure, Rajma Chawal and Paneer Naan,
-                but one of the humongous favourites is Tandoori Chicken!
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- food section -->
-        <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-          <div
-            class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 foodSec"
-          >
-            <div class="txt">
-              <h2>Makki Di Roti</h2>
-              <p>
-                Makke di Roti (maize bread) and Sarson da Saag (mustard leaf
-                curry) is another traditional dish of Punjab. There are many
-                other foods like Chole Bhathure, Rajma Chawal and Paneer Naan,
-                but one of the humongous favourites is Tandoori Chicken!
-              </p>
-            </div>
-            <div
-              class="img d-flex justify-content-center justify-content-lg-end py-5"
-            >
-              <div class="relDiv">
-                <img
-                  class="absDiv"
-                  src="images/Makki-di-Roti-and-Sarson-ka-Saag 1.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- dress section -->
-        <div class="mx-2 mx-md-0 mx-lg-4 mx-lg-5 my-5">
-          <div
-            class="d-flex align-items-center mx-md-2 mx-lg-4 mx-xl-5 p-5 gap-5 dressSec"
-          >
-            <div
-              class="img d-flex justify-content-center justify-content-lg-between py-5"
-            >
-              <div class="relDiv">
-                <img
-                  class="absDiv"
-                  src="images/Makki-di-Roti-and-Sarson-ka-Saag 1.png"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="txt">
-              <h2>Makki Di Roti</h2>
-              <p>
-                Makke di Roti (maize bread) and Sarson da Saag (mustard leaf
-                curry) is another traditional dish of Punjab. There are many
-                other foods like Chole Bhathure, Rajma Chawal and Paneer Naan,
-                but one of the humongous favourites is Tandoori Chicken!
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <!-- footer -->

@@ -117,4 +117,5 @@ class PoetResource extends Resource
             'edit' => Pages\EditPoet::route('/{record}/edit'),
         ];
     }
+
 }

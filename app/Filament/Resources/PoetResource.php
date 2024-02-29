@@ -18,6 +18,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
+use Filament\Tables\Columns\ImageColumn;
 
 
 
@@ -47,7 +48,7 @@ class PoetResource extends Resource
                         Forms\Components\TextInput::make('birth_place')->required(),
                         Forms\Components\TextInput::make('google_map')->required(),
                         Forms\Components\DatePicker::make('date_of_birth')->required(),
-                        Forms\Components\DatePicker::make('death_date')->required(),
+                        Forms\Components\DatePicker::make('death_date')->required()->rules(['after:start_date']),
                     ]),
     
                     Grid::make([
@@ -82,10 +83,11 @@ class PoetResource extends Resource
     {
         return $table
             ->columns([
- 
+                ImageColumn::make('poet_image')->label('Image'),
                 TextColumn::make('pen_name'),
                 TextColumn::make('real_name'),
                 TextColumn::make('date_of_birth')->date(),
+                TextColumn::make('updated_at')->label('updated')->since(),
             ])
             ->filters([
                 //

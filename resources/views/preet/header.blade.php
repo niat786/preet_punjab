@@ -15,6 +15,9 @@
     @if(Request::is('about'))
       <link rel="stylesheet" href="{{asset('preet/css/about.css')}}" />
     @endif
+    @if(Request::is('contact'))
+      <link rel="stylesheet" href="{{asset('preet/css/contact.css')}}" />
+    @endif
     @if(Request::is('poet'))
       <link rel="stylesheet" href="{{asset('preet/css/waris.css')}}" />
     @endif

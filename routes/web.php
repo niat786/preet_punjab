@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FrontController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'preet.index');
-Route::view('/about', 'preet.about');
-Route::view('/poet', 'preet.poet-single');
-Route::view('/poetry', 'preet.poetry');
-Route::view('/punjabi-culture', 'preet.punjabiculture');
-Route::view('/heritage-sites', 'preet.punjabheritage');
+Route::get('/',  [FrontController::class, "front_page"]);
+Route::get('/poet', [FrontController::class, "poet"]);
+Route::get('/poetry', [FrontController::class, "poetry"]);
+Route::get('/punjabi-culture', [FrontController::class, "punjabi_culture"]);
+Route::get('/heritage-sites', [FrontController::class, "heritage_sites"]);
+Route::get('/about', [FrontController::class, "about"]);
+Route::get('/contact', [FrontController::class, "contact"]);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

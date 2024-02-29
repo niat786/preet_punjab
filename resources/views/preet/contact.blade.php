@@ -1,5 +1,5 @@
 @include('preet.header')
-  <body >
+<body class="d-flex poetrybody flex-column min-vh-100">
     <!-- navbar -->
   @include('preet.navbar')
 

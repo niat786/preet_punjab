@@ -214,32 +214,21 @@
     <div class="popularPoetry d-flex  justify-content-between p-5 flex-wrap ">
      <div class="popTxt px-0 px-sm-5">
        <h2>Popular Poetry</h2>
-       <p>---==, and ghazals penned by renowned poets.
+       <p>and ghazals penned by renowned poets.
           Uncover the celebrated literary figures of Pakistan and India who crafted exceptional </p>
      </div>
 
      <div class="popSlider  d-flex gap-3">
+      @foreach($poetries as $poetry)
        <div class="popSliderFirst">
-         <h5 id="sliderTxtHeadFirst" class="text-center">Na Kar Bandya Meri Meri</h5>
+         <h5 id="sliderTxtHeadFirst" class="text-center">{{$poetry->title}}</h5>
          <p id="sliderDescHeadFirst" class="d-flex justify-content-center ">
-         Na kar bandya meri meri <br>
-             Na teri na meri<br>
-            Char dina da mela<br>
-         Dunya pher matti de dheri</p>
-         <div class="d-flex justify-content-end"><span id="firstWriter" >-Bulleh Shah</span></div>
+         {{$poetry->poetry}}</p>
+         
           
        </div>
-       <div class="popSliderSecond">
-       
-           <h5 id="sliderTxtHeadSecond" class="text-center">Lorem ipsum </h5>
-           <p id="sliderDescHeadSecond" class="d-flex justify-content-center">
-             lorem ipsum <br>
-             lorem ipsum <br>
-             lorum imspsum</p>
-           <div class="d-flex justify-content-end"><span id="secondWriter" >-Bulleh Shah</span></div>
-            
-         
-       </div>
+
+      @endforeach
        
      </div>
      <div class="popBtns w-100 d-flex justify-content-center gap-4">
@@ -266,61 +255,20 @@
     <div class="d-flex p-0 p-sm-5 mx-2 mx-sm-3 gap-4   poetPic " >
 
      
-     
+    @foreach($poets as $poet)     
        <div class="con ">
-         <img src="{{asset('preet/images/nusret fateh ali khan.png')}}" alt="Avatar" class="image">
+         <img src="{{asset('storage/'.$poet->poet_image)}}" alt="Avatar" class="image">
          <div class="overlay">
            <div class="text"><b>
-             Nusrat Fateh ALI khan
+             {{$poet->real_name}}
            </b>
-           <p>1948-1997</p>
+           <p>{{ \Carbon\Carbon::parse($poet->date_of_birth)->format('Y') }} -
+                <!-- Extracting the year of death -->
+                {{ \Carbon\Carbon::parse($poet->date_of_death)->format('Y') }}</p>
          </div>
          </div>
        </div>
-
-       <div class="con ">
-         <img src="{{asset('preet/images/nusret fateh ali khan.png')}}" alt="Avatar" class="image">
-         <div class="overlay">
-           <div class="text"><b>
-             Nusrat Fateh ALI khan
-           </b>
-           <p>1948-1997</p>
-         </div>
-         </div>
-       </div>
-
-       <div class="con ">
-         <img src="{{asset('preet/images/nusret fateh ali khan.png')}}" alt="Avatar" class="image">
-         <div class="overlay">
-           <div class="text"><b>
-             Nusrat Fateh ALI khan
-           </b>
-           <p>1948-1997</p>
-         </div>
-         </div>
-       </div>
-
-       <div class="con ">
-         <img src="{{asset('preet/images/nusret fateh ali khan.png')}}" alt="Avatar" class="image">
-         <div class="overlay">
-           <div class="text"><b>
-             Nusrat Fateh ALI khan
-           </b>
-           <p>1948-1997</p>
-         </div>
-         </div>
-       </div>
-
-       <div class="con ">
-         <img src="{{asset('preet/images/nusret fateh ali khan.png')}}" alt="Avatar" class="image">
-         <div class="overlay">
-           <div class="text"><b>
-             Nusrat Fateh ALI khan
-           </b>
-           <p>1948-1997</p>
-         </div>
-         </div>
-       </div>
+    @endforeach
      
       
    

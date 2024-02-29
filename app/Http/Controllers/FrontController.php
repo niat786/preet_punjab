@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Poetry;
 use App\Models\Poet;
+use App\Models\CulturalContent;
 
 
 class FrontController extends Controller
 {
     public function front_page(){
         $poets = Poet::take(4)->get();
-        return view('preet.index', ['poets'=>$poets]);
+        $poetries = Poet::take(10)->get();
+        $culture = CulturalContent::take(1)->get();
+        return view('preet.index', ['poets'=>$poets, 'poetries'=>$poetries, 'culture'=>$culture]);
     }
 
     public function poet(){
